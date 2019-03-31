@@ -3,6 +3,8 @@ pytlas-help ![License]( https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 
 Provides some help to the users such as what are the currently available skills and how to trigger them.
 
+It makes use of skills metadata registered with the pytlas `@meta()` decorator.
+
 ## Supported languages
 
 - French
