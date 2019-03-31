@@ -12,3 +12,12 @@ Provides some help to the users such as what are the currently available skills 
 
 - How can you help?
 - Que sais-tu faire ?
+
+## Launching tests
+
+In order to launch tests, you will need to install required dependencies and then launch the test suite with:
+
+```bash
+$ pip install -r requirements_tests.txt
+$ python -m nose --with-coverage --cover-package=help
+```
