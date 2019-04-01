@@ -1,4 +1,4 @@
-pytlas-help ![License]( https://img.shields.io/badge/License-GPL%20v3-blue.svg)
+pytlas-help [![Build Status](https://travis-ci.org/atlassistant/pytlas-help.svg?branch=master)](https://travis-ci.org/atlassistant/pytlas-help) ![License]( https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 ===
 
 Provides some help to the users such as what are the currently available skills and how to trigger them.
