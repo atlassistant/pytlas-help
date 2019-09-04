@@ -1,8 +1,8 @@
-from sure import expect
-from pytlas.testing import create_skill_agent
-from pytlas.skill import Meta
-from unittest.mock import patch
 import os
+from sure import expect
+from unittest.mock import patch
+from pytlas.testing import create_skill_agent
+from pytlas.handling import Meta
 
 class TestGetHelp:
 
@@ -12,8 +12,7 @@ class TestGetHelp:
       Meta(name='bravo', description='A bravo skill', author='John Doe'),
     ]
 
-    # Here we need to patch the method before importing the skill
-    with patch('pytlas.pam.get_loaded_skills', return_value=skills):
+    with patch('pytlas.supporting.SkillsManager.get', return_value=skills):
       agent = create_skill_agent(os.path.dirname(__file__), lang='en')
       agent.parse('how can you help')
 
@@ -29,5 +28,3 @@ class TestGetHelp:
       expect(call.cards[1].header).to.equal('bravo')
       expect(call.cards[1].text).to.equal('A bravo skill')
       expect(call.cards[1].subhead).to.equal('John Doe')
-
-

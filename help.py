@@ -1,5 +1,5 @@
 from pytlas import training, translations, intent, meta, Card
-from pytlas.pam import get_loaded_skills
+from pytlas.supporting import SkillsManager
 
 @training('fr')
 def fr_training(): return """
@@ -55,7 +55,7 @@ def fr_translations(): return {
 
 @intent('help__get_skills')
 def on_get_skills(req):
-  skills = get_loaded_skills(req.lang)
+  skills = SkillsManager(None, lang=req.lang).get()
   cards = [Card(s.name, s.description, s.author, s.homepage) for s in skills]
 
   req.agent.answer(req._('Here what I know so far'), cards)
